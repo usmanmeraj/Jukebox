@@ -314,7 +314,6 @@ open class Jukebox: NSObject, JukeboxItemDelegate {
         guard let item = currentItem else {return}
         
         let title = (item.meta.title ?? item.localTitle) ?? item.URL.lastPathComponent
-        let artwork = item.localArtwork ?? ""
         let currentTime = item.currentTime ?? 0
         let duration = item.meta.duration ?? 0
         let trackNumber = playIndex
