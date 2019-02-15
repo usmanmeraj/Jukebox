@@ -47,6 +47,7 @@ open class JukeboxItem: NSObject {
             var delegate: JukeboxItemDelegate?
     fileprivate var didLoad = false
     open  var localTitle: String?
+    open var localArtwork: String?
     open  let URL: Foundation.URL
     
     fileprivate(set) open var playerItem: AVPlayerItem?
@@ -67,10 +68,11 @@ open class JukeboxItem: NSObject {
     
     - returns: JukeboxItem instance
     */
-    public required init(URL : Foundation.URL, localTitle : String? = nil) {
+    public required init(URL : Foundation.URL, localTitle : String? = nil, localArtwork: String?) {
         self.URL = URL
         self.identifier = UUID().uuidString
         self.localTitle = localTitle
+        self.localArtwork = localArtwork
         super.init()
         configureMetadata()
     }
